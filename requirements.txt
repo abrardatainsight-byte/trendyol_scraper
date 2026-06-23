@@ -1,0 +1,9 @@
+selenium
+beautifulsoup4
+openpyxl
+pandas
+schedule
+webdriver-manager
+gspread
+google-auth
+pyinstaller
