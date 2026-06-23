@@ -10,12 +10,14 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
+    # Updated to v4
+    - uses: actions/checkout@v4
 
+    # Updated to v5
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.11' # Use the version you developed with
+        python-version: '3.11' 
 
     - name: Install dependencies
       run: |
@@ -24,11 +26,11 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        # --windowed creates a .app bundle without a background terminal
         pyinstaller --noconfirm --onedir --windowed --name "TrendyolScraper" trendyol_scraper.py
 
+    # Updated to v4 (This fixes your error)
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: TrendyolScraper-macOS
         path: dist/TrendyolScraper.app
